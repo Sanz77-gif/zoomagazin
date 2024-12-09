@@ -23,7 +23,119 @@
         svg {
             position: absolute;
             z-index: 0;
-        }
+        } button {
+    background-color: #ffc0cb;
+    border: 2px solid #ff69b4; 
+    color: white; 
+    font-size: 12px; 
+    font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.2s;
+    }
+title, h1,h2,h3, p {
+    color: rgb(162, 20, 89);
+}
+a:link {
+    color: rgb(86, 40, 40);
+    text-decoration: none;
+}
+a:hover {
+    color: green; 
+    text-decoration: underline; 
+}
+a:visited {
+    color: rgb(128, 6, 0); 
+}
+a:active {
+    color: red; 
+}
+ul{
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+ul{
+    margin: 5px 0;
+}
+body{
+    background: linear-gradient(rgb(255, 170, 187), rgb(196, 195, 255), rgb(255, 170, 187), rgb(196, 195, 255), rgb(255, 170, 187));
+    background-repeat: repeat;
+    background-position: top
+}
+h1{
+    font-family: "Monotype Corsiva";
+    font-style:oblique;
+}
+#zabota {
+    font-family: "Monotype Corsiva";
+    font-style:oblique;
+    font-size: larger;
+}
+div.menu {
+    position: relative;
+    border: 1px solid rgb(244, 164, 177);
+    margin-left: 3cm;
+    margin-right: 1cm;  
+    margin-top: 0;
+    margin-bottom: 2cm; 
+    text-indent: 1.5cm; 
+    background-color: #edfff1; 
+    font-family: "Times New Roman";
+    font-size: 14pt; 
+    line-height: 1.5;
+}
+div.menu::first-letter {
+    font-size: 18pt;
+    font-weight: bold;
+}
+#ani{
+    width: 100%;
+    border-collapse: collapse;
+}
+#ani th{
+    text-align: center;
+    background-color: #ffe4e1;
+    padding: 10px;
+}
+
+#ani td{
+    padding: 10px;
+    border: 1px solid rgb(244, 164, 177); 
+}
+
+#ani td:first-child {
+    text-align: justify;
+}
+
+#ani td:nth-child(2) {
+    text-align: center;
+}
+#ani td:nth-child(odd) {
+    background-color: white; 
+}
+
+#ani td:nth-child(even) {
+    background-color: #ffe4e1;
+}
+#ani{
+    box-shadow: 1px 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius:8px; 
+}
+.img {
+    float: right;
+    margin-right: 15px; 
+    margin-bottom: 10px;
+}
+.tov {
+    text-align: justify;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+img[src$=".jpg"] {
+    border: 8px dotted #ffceeb;
+}
     </style>
 </head>
 <body bgcolor="#f8f0e3" text="#333333">
