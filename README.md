@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <head>
     <title>Зоомагазин "Все для питомцев"</title>
     <link  href="style.css" rel="stylesheet" type="text/css">
@@ -192,7 +192,6 @@ img[src$=".jpg"] {
                     <td align="center" bgcolor="#faf0e6">
                         <h2 class="tov" id="mys">Товары для кошек</h2>
                         <img class="img" src="кошки (1).jpg" height="300" width="300" alt="Кошки">
-                        
                         <ul id="catItems">
                             <li><span>Корм для кошек:</span> <strong>от 1500 тг.</strong></li>
                             <li><span>Игрушки для кошек:</span> <strong>от 1000 тг.</strong></li>
@@ -201,7 +200,6 @@ img[src$=".jpg"] {
                         <button onclick="sor()">Сортировать товары</button>
                         <h2>Хотите добавить товар?</h2> 
                         <button onclick="kos()">Добавить товар</button>
-                        
                     </td>
                 </tr>
             </table>
@@ -344,23 +342,18 @@ img[src$=".jpg"] {
         <option value="guinea_pig">Морская свинка</option>
     </select>
     <br><br>
-
-    <label for="produc">Выберите товар:</label><br>
+     <label for="produc">Выберите товар:</label><br>
     <input type="text" id="product" name="product" placeholder="Название товара" required>
     <br><br>
-
     <label for="quantity">Количество:</label><br>
     <input type="number" id="quantity" min="1" placeholder="1" required>
     <br><br>
-
     <label for="address">Адрес доставки:</label><br>
     <input type="text" id="address" placeholder="Улица, дом, квартира" required>
     <br><br>
-
     <label for="phone">Контактный телефон:</label><br>
     <input type="tel" id="phone" placeholder="+7 (_) _-__" required>
     <br><br>
-
     <label for="comments">Дополнительные комментарии:</label><br>
     <textarea rows="2" cols="25" placeholder="Дополнительная информация..."></textarea>
     <br><br>
@@ -393,15 +386,12 @@ img[src$=".jpg"] {
     //а
 $(document).ready(function () {
     $("h1").text("Добро пожаловать!").css("color", "#f266a3");
-    
     $("#add").click(function () {
         $("ul").append("<li>Новый элемент списка</li>");
     });
-
     $("#removen").click(function () {
         $("ul li:last").remove();
     });
-
     $("#change-font").click(function () {
         $(".menu").css({
             "font-size": "20px",
@@ -409,31 +399,23 @@ $(document).ready(function () {
             "color": "blue",
         });
     });
-
     $("a").hover(function () {
         $(this).css("font-size", "18px");
         }, function () {
             $(this).css("font-size", "");
         });
-    
     $(".menu").click(function () {
         $(this).fadeOut(2000).fadeIn(2000);
     });
-
-
     $('#fadeOut').click(function () {
             $('#box').fadeOut();
     });
-    
-
-    //б
     $("a").tooltipster({
         content: "Перейти к разделу",
         animation: "fade",
         delay: 200,
         });
     });
-
     new Vue({
             el: '#app',
             data: {
@@ -445,7 +427,6 @@ $(document).ready(function () {
                 }
             }
         });
-
         new Vue({
             el: '#aaa',
             data: {
@@ -464,7 +445,6 @@ $(document).ready(function () {
                 }
             }
         });
-
         new Vue({
             el: '#ch',
             methods: {
@@ -474,9 +454,7 @@ $(document).ready(function () {
                         'Игрушки для собак': 1400,
                         'Поводки и ошейники': 3000,
                     };
-
                     let selectedProduct = prompt('Выберите товар: \nКорм для собак\nИгрушки для собак\nПоводки и ошейники\n');
-
                     if (products[selectedProduct]) {
                         alert(`${selectedProduct} стоит ${products[selectedProduct]} тенге`);
                     } else {
@@ -485,12 +463,9 @@ $(document).ready(function () {
                 }
             }
         });
-
         function showMessage() {
         alert('Заказ оформлен');
         }
-
-
     function tovar() {
         const h = document.getElementById('mys');
         h.style.color = 'teal';
@@ -509,7 +484,6 @@ $(document).ready(function () {
         list.innerHTML = '';
         items.forEach(item => list.appendChild(item));
     }
-
     function kos() {
         const itemName = prompt("Введите название товара:");
         const itemPrice = prompt("Введите цену товара:");
@@ -519,7 +493,6 @@ $(document).ready(function () {
         document.getElementById('catItems').appendChild(newItem);
         }
     }
-
     function remove(button) {
         const item = button.parentElement;
         item.remove();
@@ -531,18 +504,15 @@ $(document).ready(function () {
     function UserAgent() {
         alert(navigator.userAgent);
     }
-
     function Platform() {
         alert(navigator.platform);
     }
     function ScreenInfo() {
         alert(screen.width+"x"+screen.height);
     }
-
     function Locations() {
         alert(`Текущий URL: ${window.location.href}`);
     }
-
     function Frames() {
         alert(`Количество фреймов: ${window.frames.length}`);
     }
