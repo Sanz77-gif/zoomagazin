@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <title>Корма для всех животных</title>
+    <products>
+        <category name="Корма для кошек">
+            <product>
+                <name>Сухой корм для кошек</name>
+                <price>5000</price>
+                <country>Россия</country>
+                <year>2023</year>
+                <expiry>2025-12-31</expiry>
+            </product>
+            <product>
+                <name>Консервированный корм</name>
+                <price>6000</price>
+                <country>Германия</country>
+                <year>2023</year>
+                <expiry>2024-06-30</expiry>
+            </product>
+            <product>
+                <name>Лакомства для кошек</name>
+                <price>3000</price>
+                <country>США</country>
+                <year>2024</year>
+                <expiry>2024-03-15</expiry>
+            </product>
+        </category>
+
+        <category name="Корма для собак">
+            <product>
+                <name>Сухой корм для собак</name>
+                <price>8000</price>
+                <country>Франция</country>
+                <year>2023</year>
+                <expiry>2025-05-01</expiry>
+            </product>
+            <product>
+                <name>Консервы для собак</name>
+                <price>7000</price>
+                <country>Испания</country>
+                <year>2022</year>
+                <expiry>2024-12-15</expiry>
+            </product>
+            <product>
+                <name>Лакомства для собак</name>
+                <price>3500</price>
+                <country>Китай</country>
+                <year>2023</year>
+                <expiry>2025-01-20</expiry>
+            </product>
+        </category>
+
+        <category name="Корма для птиц">
+            <product>
+                <name>Семена и смеси для птиц</name>
+                <price>1500</price>
+                <country>Италия</country>
+                <year>2023</year>
+                <expiry>2024-08-30</expiry>
+            </product>
+            <product>
+                <name>Витамины для птиц</name>
+                <price>2500</price>
+                <country>Польша</country>
+                <year>2022</year>
+                <expiry>2024-02-20</expiry>
+            </product>
+        </category>
+
+        <category name="Корма для грызунов">
+            <product>
+                <name>Корм для хомяков</name>
+                <price>1000</price>
+                <country>Россия</country>
+                <year>2024</year>
+                <expiry>2025-03-10</expiry>
+            </product>
+            <product>
+                <name>Корм для кроликов</name>
+                <price>2500</price>
+                <country>США</country>
+                <year>2023</year>
+                <expiry>2025-01-15</expiry>
+            </product>
+            <product>
+                <name>Корм для морских свинок</name>
+                <price>2000</price>
+                <country>Германия</country>
+                <year>2022</year>
+                <expiry>2024-05-05</expiry>
+            </product>
+        </category>
+
+        <category name="Корма для рыб">
+            <product>
+                <name>Корм для аквариумных рыбок</name>
+                <price>1200</price>
+                <country>Япония</country>
+                <year>2023</year>
+                <expiry>2025-07-20</expiry>
+            </product>
+            <product>
+                <name>Корм для прудовых рыб</name>
+                <price>1300</price>
+                <country>Китай</country>
+                <year>2024</year>
+                <expiry>2025-03-10</expiry>
+            </product>
+        </category>
+    </products>
+</catalog>

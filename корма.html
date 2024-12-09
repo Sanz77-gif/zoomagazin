@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Корма для животных</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #fff7f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #d880a7;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #f3c1d9;
+            border-radius: 5px;
+            background-color: #fce8f1;
+            color: #d880a7;
+        }
+        button {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #f3c1d9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #f3c1d9;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f3c1d9;
+            color: #fff;
+            cursor: pointer;
+        }
+        th:hover {
+            background-color: #e2b5c9;
+        }
+        tr:nth-child(even) {
+            background-color: #fdeff5;
+        }
+        tr:hover {
+            background-color: #fbe5ec;
+        }
+    </style>
+</head>
+</head>
+<body>
+    <body bgcolor="#faf0e6" text="#333333">
+
+        <table width="100%" border="0" bgcolor="#ffe4e1" cellpadding="10">
+            <tr>
+                <td align="center">
+                    <h1>Корма для животных</h1>
+                </td>
+            </tr>
+        </table>
+    <div style="text-align: center;">
+        <input type="text" id="filterInput" placeholder="Фильтр по названию" onkeyup="filterData()">
+        <button onclick="sortData('price')">Сортировать по цене</button>
+        <button onclick="sortData('year')">Сортировать по году выпуска</button>
+        <button onclick="sortData('expiry')">Сортировать по сроку годности</button>
+    </div>
+    <table id="productsTable">
+        <thead>
+            <tr>
+                <th>Категория</th>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Страна</th>
+                <th>Год выпуска</th>
+                <th>Срок годности</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+    <script>
+        function x() {
+            fetch('catalog.xml')
+                .then(response => response.text())
+                .then(xmlText => {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+                    m(xmlDoc);
+                })
+                .catch(error => console.error('Ошибка загрузки XML:', error));
+        }
+        function m(xmlDoc) {
+            const products = xmlDoc.getElementsByTagName("product");
+            const tableBody = document.getElementById("tableBody");
+            tableBody.innerHTML = "";
+
+            for (let i = 0; i < products.length; i++) {
+                const product = products[i];
+                const row = `<tr>
+                    <td>${product.parentNode.getAttribute("name")}</td>
+                    <td>${product.getElementsByTagName("name")[0].textContent}</td>
+                    <td>${product.getElementsByTagName("price")[0].textContent}</td>
+                    <td>${product.getElementsByTagName("country")[0].textContent}</td>
+                    <td>${product.getElementsByTagName("year")[0].textContent}</td>
+                    <td>${product.getElementsByTagName("expiry")[0].textContent}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            }
+        }
+        function sortData(type) {
+            const tableBody = document.getElementById("tableBody");
+            let rows = Array.from(tableBody.getElementsByTagName("tr"));
+
+            rows.sort((a, b) => {
+                let valA, valB;
+                switch (type) {
+                    case 'price':
+                        valA = parseInt(a.cells[2].textContent);
+                        valB = parseInt(b.cells[2].textContent);
+                        break;
+                    case 'year':
+                        valA = parseInt(a.cells[4].textContent);
+                        valB = parseInt(b.cells[4].textContent);
+                        break;
+                    case 'expiry':
+                        valA = new Date(a.cells[5].textContent);
+                        valB = new Date(b.cells[5].textContent);
+                        break;
+                }
+                return valA - valB;
+            });
+
+            tableBody.innerHTML = "";
+            rows.forEach(row => tableBody.appendChild(row));
+        }
+        function filterData() {
+            const filterInput = document.getElementById("filterInput").value.toLowerCase();
+            const tableBody = document.getElementById("tableBody");
+            const rows = Array.from(tableBody.getElementsByTagName("tr"));
+            rows.forEach(row => {
+                const name = row.cells[1].textContent.toLowerCase();
+                if (name.includes(filterInput)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+        window.onload = x;
+    </script>
+</body>
+</html>
