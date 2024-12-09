@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tooltipster/dist/css/tooltipster.bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/tooltipster/dist/js/tooltipster.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.min.js"></script>
-
     <style>
         table{
             border-collapse:separate;
@@ -55,7 +54,6 @@ ul{
     list-style-type: square;
     padding-left: 20px;
 }
-
 ul{
     margin: 5px 0;
 }
